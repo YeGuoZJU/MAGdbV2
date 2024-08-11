@@ -31,38 +31,37 @@ p2 <- ggplot(violin, aes(x = Contamination, y = 0)) +
         panel.grid = element_blank(),
         axis.title.x = element_text(size = 12, face = "bold")) + # 隐藏纵坐标文本
   xlab("Contamination(%)")
-
-
-
-p3 <- ggplot(violin, aes(x = log10(as.numeric(N50)), y = 0)) +
+p3 <- ggplot(violin, aes(x = as.numeric(Size/1000000), y = 0)) +
   geom_violin(trim = TRUE,bw = 0.02, width = 0.05, fill ="#99D9CF") +
   geom_boxplot(width = 0.01,fill = "#00A087")  +
   theme_classic() + 
-  scale_x_continuous(limits = c(3.5, 6), breaks = seq(3, 6, by = 0.5),expand = c(0, 0)) +
+  scale_x_continuous(limits = c(0.5, 13), breaks = seq(0.5, 12.5, by = 2),expand = c(0, 0)) +
   theme(axis.title.y = element_blank(),  # 隐藏纵坐标标题
+        axis.text.x = element_text(size = 14),  # 调整 x 轴数字字体大小
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
         axis.line.y = element_blank(),
         axis.line.x = element_line(color = "black"),
         panel.grid = element_blank(),
-        axis.title.x = element_text(size = 12, face = "bold")) + # 隐藏纵坐标文本
-  xlab("N50(log10)")
+        axis.title.x = element_text(size = 16, face = "bold")) + # 隐藏纵坐标文本
+  xlab("Genome size(Mb)")
+p3
 
-p4 <- ggplot(violin, aes(x = log10(as.numeric(N_contigs)), y = 0)) +
-  geom_violin(trim = TRUE,bw = 0.1, width = 0.05, fill ="#B1BBCF") +
+p4 <- ggplot(violin, aes(x = GC_content*100, y = 0)) +
+  geom_violin(trim = TRUE,bw = 0.8, width = 0.05, fill ="#B1BBCF") +
   geom_boxplot(width = 0.01,fill = "#3C5487")  +
   theme_classic() + 
-  scale_x_continuous(limits = c(0, 3), breaks = seq(0, 3, by = 1),expand = c(0, 0)) + 
+  scale_x_continuous(limits = c(20, 75), breaks = seq(20,75 , by = 5),expand = c(0, 0)) + 
   theme(axis.title.y = element_blank(),  # 隐藏纵坐标标题
+        axis.text.x = element_text(size = 14),  # 调整 x 轴数字字体大小
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
         axis.line.y = element_blank(),
         axis.line.x = element_line(color = "black"),
         panel.grid = element_blank(),
-        axis.title.x = element_text(size = 12, face = "bold")) + # 隐藏纵坐标文本
-  xlab("N_contigs(log10)")
+        axis.title.x = element_text(size = 16, face = "bold")) + # 隐藏纵坐标文本
+  xlab("GC_content(%)")
 p4
-
 
 # 创建一些空白图来作为间隔
 blank_plot <- ggplot() + theme_void()
