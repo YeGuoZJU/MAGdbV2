@@ -1,0 +1,25 @@
+﻿Country,Count,Category
+1_USA,3262,Clincial
+2_United Kingdom,1519,Clincial
+3_Denmark,1119,Clincial
+4_China,1080,Clincial
+5_Sweden,678,Clincial
+6_New Zealand,646,Clincial
+7_Finland,522,Clincial
+8_Russia,305,Clincial
+9_Italy,293,Clincial
+10_Estonia,199,Clincial
+11_China,525,environment
+12_USA,237,environment
+13_Switzerland,177,environment
+14_Norway,75,environment
+15_Denmark,72,environment
+16_United Kingdom,62,environment
+17_Canada,40,environment
+18_Sweden,36,environment
+19_Australia,25,environment
+20_Russia,18,environment
+21_Tanzania,18,environment
+22_China,1457,animal
+23_USA,60,animal
+24_United Kingdom,43,animal
